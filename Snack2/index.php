@@ -2,6 +2,11 @@
     $mail = isset($_GET['mail']) ? $_GET['mail'] :'';
     $name = isset($_GET['name']) ? $_GET['name'] :'';
     $age = isset($_GET['age']) ? $_GET['age'] :'';
+    $message = isset($_GET['message']) ? $_GET['message'] :'';
+    $message_name = isset($_GET['message_name']) ? $_GET['message_name'] :'';
+    $message_age = isset($_GET['message_age']) ? $_GET['message_age'] :'';
+
+
 
     if (isset($_GET['mail'])) {
 		$mail = $_GET['mail'];
@@ -28,6 +33,13 @@
 			$message_age = '- Accesso negato';
 		}
     };
+    if (strlen($name) > 3 && is_numeric($age) && $chiocciola && strpos($mail, '.', $chiocciola)) {
+        $last_message = '- Accesso riuscito';
+    } else {
+        $last_message = '- Accesso negato';
+
+    }
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
