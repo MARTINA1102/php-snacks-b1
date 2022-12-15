@@ -1,12 +1,15 @@
 <?php
-    $number = [];
-    while (count($number) < 15) {
-        $numrandom= rand(50,100);
-        if (!in_array($numrandom,$number)) {
-            $number[] = $numrandom;
+    $n_random = 15;
+    $arr_random = [];
+    $min = 0;
+    $max = 100;
+    while (count($arr_random) < $n_random) {
+        $random_number = rand($min, $max);
+        if (!in_array($random_number, $arr_random)) {
+            $arr_random[] = $random_number;
         };
     };
-    var_dump($number);
+    var_dump($arr_random);
 ?>
 <!DOCTYPE html>
 <html lang="en">
